@@ -2,19 +2,20 @@
 #include <fstream>
 #include "GameEngine.h"
 #include "Bot.h"
-
+#include "Candy.cpp"
 
 int main()
 {
-	GameEngine engine("C:\\Users\\itsupport\\eclipse-workspace\\hi\\src\\map10.txt", "C:\\Users\\itsupport\\eclipse-workspace\\hi\\src\\future10.txt"); //init game engine with map & future map.
+
+	GameEngine engine("C:\\Projects\\c++\\c++bot\\maps\\map10.txt", "C:\\Projects\\c++\\c++bot\\maps\\future10.txt"); //init game engine with map & future map.
 	Bot myBot; //init Bot
 
-	bool smart = false; //false = human, true = bot
+	bool smart = true; //false = human, true = bot
 	int x1, y1, x2, y2; //coordinates for next move. x1 y1 = tile 1 , x2 y2 = tile 2
 
 
 	while(engine.hasLegalMoves()){ //while the game isn't over
-		
+
 		int nextMoveInt;
 		int *nextMove = &nextMoveInt; // this is where the next move will be stored: [x1,y1,x2,y2]
 
